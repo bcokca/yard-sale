@@ -29,7 +29,12 @@ export class YardSaleComponent {
     }
 
     onSelect(sale: Sale) {
-        this.router.navigate(['/sales', sale.id]);
+        this.router.navigate(['/sales/get', sale.id]);
+    }
+
+    gotoSalesSave(){
+        this.router.navigate(['/sales-save']);
+
     }
 
 }

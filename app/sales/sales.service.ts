@@ -29,4 +29,8 @@ export class SalesService{
 
     }
 
+    saveSale(sale: Sale): void{
+        this.sales.push(sale);
+    }
+
 }

@@ -4,3 +4,5 @@ npm-debug.log*
 # Directories
 node_modules
 /.idea
+/app/**/*.js
+/app/**/*.map

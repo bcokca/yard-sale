@@ -9,6 +9,7 @@ import {HeroesComponent}      from './hero/heroes.component';
 import {HeroDetailComponent}  from './hero/hero-detail.component';
 import {YardSaleComponent} from './sales/sales.component'
 import {YardSaleDetailsComponent} from "./sales/sales-details.component";
+import {YardSaleSaveComponent} from './sales/sales-save.component'
 
 const routes: Routes = [
     {path: '', redirectTo: '/sales', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
 
     //sales related routes
     {path: 'sales', component: YardSaleComponent},
-    {path: 'sales/:id', component: YardSaleDetailsComponent},
+    {path: 'sales/get/:id', component: YardSaleDetailsComponent},
+    {path: 'sales/save', component: YardSaleSaveComponent}
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

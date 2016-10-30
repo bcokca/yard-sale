@@ -11,9 +11,10 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {YardSaleComponent} from './sales/sales.component';
 import {YardSaleDetailsComponent} from "./sales/sales-details.component";
+import {YardSaleSaveComponent} from "./sales/sales-save.component";
 import {SalesService} from "./sales/sales.service";
 
-import {Navbar} from './navbar';
+import {Navbar} from './navbar/navbar';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {Navbar} from './navbar';
         DashboardComponent,
         YardSaleComponent,
         YardSaleDetailsComponent,
+        YardSaleSaveComponent,
         Navbar],
     providers: [
         HeroService,
