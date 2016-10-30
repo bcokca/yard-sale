@@ -39,17 +39,17 @@ import {Component} from '@angular/core';
     
     `],
     template: `
-        <h1>{{title}}</h1>
-        <nav>
-            <a routerLink="/sales" routerLinkActive="active">List</a>
-            <a routerLink="/sales/my-sales" routerLinkActive="active">My Sales</a>
-            <a routerLink="/sales/post" routerLinkActive="active">Post Sale</a>
-        </nav>
-        <router-outlet></router-outlet>
+        <yard-sale-navbar></yard-sale-navbar>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <router-outlet></router-outlet>
+                </div>
+
+            </div>
+        </div>
     `
 
 })
 export class AppComponent{
-    title = 'Yard Sale';
-
 }

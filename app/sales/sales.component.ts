@@ -17,10 +17,15 @@ import {SalesService} from "./sales.service";
 export class YardSaleComponent {
     title: string = "Yard Sales Will Come Here";
     sales: Array<Sale>;
+    today: Date;
 
     constructor(private router: Router, private salesService: SalesService) {
+        //get sales
         salesService.getSales()
             .then(sales => this.sales = sales);
+
+        //todays date
+        this.today = new Date();
     }
 
     onSelect(sale: Sale) {

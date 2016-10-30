@@ -13,6 +13,8 @@ import {YardSaleComponent} from './sales/sales.component';
 import {YardSaleDetailsComponent} from "./sales/sales-details.component";
 import {SalesService} from "./sales/sales.service";
 
+import {Navbar} from './navbar';
+
 
 @NgModule({
     imports: [
@@ -26,7 +28,8 @@ import {SalesService} from "./sales/sales.service";
         HeroesComponent,
         DashboardComponent,
         YardSaleComponent,
-        YardSaleDetailsComponent],
+        YardSaleDetailsComponent,
+        Navbar],
     providers: [
         HeroService,
         SalesService
