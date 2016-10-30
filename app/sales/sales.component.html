@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<ul>
+    <li *ngFor="let sale of sales" (click)="onSelect(sale)">
+        <span>Id: {{sale.id}}</span>
+        <span>Title: {{sale.title}}</span>
+        <span>Address: {{sale.address}}</span>
+    </li>
+</ul>
