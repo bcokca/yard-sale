@@ -3,6 +3,6 @@ npm-debug.log*
 
 # Directories
 node_modules
-/.idea
-/app/**/*.js
-/app/**/*.map
+.idea/
+app/**/*.js
+app/**/*.map

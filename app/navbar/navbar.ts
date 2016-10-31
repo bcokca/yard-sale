@@ -3,6 +3,7 @@
  */
 
 import {Component} from '@angular/core';
+import {Auth} from '../auth.service';
 
 @Component({
     moduleId: module.id,
@@ -11,6 +12,12 @@ import {Component} from '@angular/core';
 })
 export class Navbar{
     title: string = 'Yard Sale';
+    constructor(private auth: Auth){
+    }
+
+    goToProfile(){
+
+    }
 
 }
 
