@@ -20,6 +20,7 @@ import {SalesService} from "./sales/sales.service";
 
 import {Navbar} from './navbar/navbar';
 import {UserProfile} from './profile/profile.component';
+import {Search} from './search/search.component';
 
 import {Auth} from './auth.service';
 
@@ -41,7 +42,8 @@ import {Auth} from './auth.service';
         YardSaleDetailsComponent,
         YardSaleSaveComponent,
         Navbar,
-        UserProfile],
+        UserProfile,
+        Search],
     providers: [
         HeroService,
         SalesService,

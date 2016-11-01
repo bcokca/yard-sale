@@ -19,8 +19,13 @@ export class SalesService{
     }
 
     getSale(id: string): Promise<Sale>{
-        return this.getSales()
-            .then(sales => sales.find(sale => sale.id === id));
+        const url = `${this.salesUrl}/${id}`;
+        return this.http
+            .get(url)
+            .toPromise()
+            .then(sale =>sale.json().result as Sale)
+            .catch(this.handleError);
+
     }
 
     getSales(): Promise<Array<Sale>>{

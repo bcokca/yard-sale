@@ -6,6 +6,7 @@ import {SaleItem} from "./sale-item.model";
 
 export class Sale {
     id: string;
+    _id: string;
     title: string;
     address: string;
     saleItems: Array<SaleItem>;
