@@ -12,6 +12,11 @@ export class Sale {
     ownerId: string;
     createdDate: Date;
     updatedDate: Date;
+    description: string;
+    start_date: Date;
+    end_date: Date;
+    latitude: string;
+    longitude: string;
 
     constructor(id: string, title: string, address: string) {
         this.id = id;

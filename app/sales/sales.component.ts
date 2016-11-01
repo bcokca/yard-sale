@@ -34,7 +34,6 @@ export class YardSaleComponent {
 
     gotoSalesSave(){
         this.router.navigate(['/sales-save']);
-
     }
 
 }

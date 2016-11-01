@@ -40,7 +40,8 @@ export class YardSaleSaveComponent implements OnInit{
     }
 
     onSubmit(){
-        this.salesService.saveSale(this.sale);
+        this.salesService.saveSale(this.sale)
+            .then();
         this.initializeSale();
     }
 

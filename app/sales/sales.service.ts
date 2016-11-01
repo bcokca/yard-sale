@@ -4,19 +4,18 @@
 
 import {Injectable} from '@angular/core';
 import {Sale} from "./sale.model";
+import {Http, Headers} from "@angular/http";
+
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SalesService{
 
     sales: Array<Sale>;
+    salesUrl : string = "http://localhost:3001/garage";
+    private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(){
-        this.sales = [];
-        this.sales.push(new Sale('1', 'My Sale', '166 Monroe, Santa Clara, CA'));
-        this.sales.push(new Sale('2', 'My Sale2', '166 Monroe, Santa Clara, CA'));
-        this.sales.push(new Sale('3', 'My Sale3', '166 Monroe, Santa Clara, CA'));
-        this.sales.push(new Sale('4', 'My Sale4', '166 Monroe, Santa Clara, CA'));
-        this.sales.push(new Sale('5', 'My Sale5', '166 Monroe, Santa Clara, CA'));
+    constructor(private http: Http){
     }
 
     getSale(id: string): Promise<Sale>{
@@ -25,12 +24,35 @@ export class SalesService{
     }
 
     getSales(): Promise<Array<Sale>>{
-        return Promise.resolve(this.sales);
+
+        return this.http.get(this.salesUrl)
+            .toPromise()//this is coming from the import on the top import 'rxjs/add/operator/toPromise';
+            .then(response => response.json().result as Sale[])
+            .catch(this.handleError);
 
     }
 
-    saveSale(sale: Sale): void{
-        this.sales.push(sale);
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     }
+
+    saveSale(sale: Sale): Promise<Sale>{
+        sale.description = "test";
+        sale.end_date = new Date();
+        sale.start_date = new Date();
+        sale.latitude = 'latitude';
+        sale.longitude = 'longitude';
+
+        // const url = `${this.salesUrl}`;
+        return this.http
+            .post(this.salesUrl, JSON.stringify(sale), {headers: this.headers})
+            .toPromise()
+            .then(() => sale)
+            .catch(this.handleError);
+    }
+
+
+
 
 }
