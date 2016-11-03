@@ -16,7 +16,6 @@ export class Auth {
     private _currentUser: {};
 
     constructor() {
-        console.log('lock', this.lock);
         // Add callback for lock `authenticated` event
         this.lock.on("authenticated", (authResult) => {
             console.log('local storage', authResult);

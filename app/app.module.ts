@@ -22,7 +22,8 @@ import {Navbar} from './navbar/navbar';
 import {UserProfile} from './profile/profile.component';
 import {Search} from './search/search.component';
 
-import {Auth} from './auth.service';
+import {Auth} from './authentication/auth.service';
+import {AuthGuard} from './authentication/auth-guard.service'
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {Auth} from './auth.service';
         HeroService,
         SalesService,
         AUTH_PROVIDERS,
-        Auth
+        Auth,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })

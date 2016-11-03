@@ -5,6 +5,7 @@
 import {Injectable} from '@angular/core';
 import {Sale} from "./sale.model";
 import {Http, Headers} from "@angular/http";
+import {AuthHttp} from 'angular2-jwt';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -15,7 +16,7 @@ export class SalesService{
     salesUrl : string = "http://localhost:3001/garage";
     private headers = new Headers({'Content-Type': 'application/json'});
 
-    constructor(private http: Http){
+    constructor(private http: Http, private authHttp: AuthHttp){
     }
 
     getSale(id: string): Promise<Sale>{
@@ -50,7 +51,7 @@ export class SalesService{
         sale.longitude = 'longitude';
 
         // const url = `${this.salesUrl}`;
-        return this.http
+        return this.authHttp
             .post(this.salesUrl, JSON.stringify(sale), {headers: this.headers})
             .toPromise()
             .then(() => sale)

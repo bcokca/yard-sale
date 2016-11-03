@@ -3,7 +3,7 @@
  */
 
 import {Component} from '@angular/core';
-import {Auth} from '../auth.service';
+import {Auth} from '../authentication/auth.service';
 
 @Component({
     moduleId: module.id,

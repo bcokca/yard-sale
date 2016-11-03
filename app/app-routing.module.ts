@@ -12,6 +12,8 @@ import {YardSaleDetailsComponent} from "./sales/sales-details.component";
 import {YardSaleSaveComponent} from './sales/sales-save.component'
 import {UserProfile} from "./profile/profile.component";
 
+import {AuthGuard} from './authentication/auth-guard.service';
+
 const routes: Routes = [
     {path: '', redirectTo: '/sales', pathMatch: 'full'},
     {path: 'dashboard', component: DashboardComponent},
@@ -21,7 +23,7 @@ const routes: Routes = [
     //sales related routes
     {path: 'sales', component: YardSaleComponent},
     {path: 'sales/get/:id', component: YardSaleDetailsComponent},
-    {path: 'sales/save', component: YardSaleSaveComponent},
+    {path: 'sales/save', component: YardSaleSaveComponent, canActivate: [AuthGuard]},
 
     //profile
     {path: 'user-profile', component: UserProfile}
