@@ -27,6 +27,7 @@
       //ng2-bootstrap
       'moment': 'npm:moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+      'angular2-google-maps/core': 'npm:angular2-google-maps/core/core.umd.js',
 
       //auth0
       'angular2-jwt': 'npm:angular2-jwt/angular2-jwt.js'

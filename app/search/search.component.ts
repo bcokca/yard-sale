@@ -8,8 +8,9 @@ import {Component} from '@angular/core';
     selector: 'search',
     template: `
        <div class="input-group" style="margin: 0 auto; width: 50%;">
-            <span class="input-group-addon" id="basic-addon1">Search</span>
-            <input type="text" class="form-control" placeholder="Look for the closest garage sale" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1">Near</span>
+            <input type="text" class="form-control" style=" width: 350px;" 
+                placeholder="address, neighborhood, city, state or zip" aria-describedby="basic-addon1">
         </div>
     `
 })

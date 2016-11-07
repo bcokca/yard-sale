@@ -1,17 +1,33 @@
-<div>{{sale.title + ' ' + sale.address}}</div>
+<div class="container">
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group col-md-6">
+            <label for="title">Title</label>
+            <input [(ngModel)]="sale.title" type="text" placeholder="Title for your garage sale"
+                   class="form-control" id="title" name="title">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="address">Street Name</label>
+            <input [(ngModel)]="sale.address.street" type="text" class="form-control" id="address" name="address">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="address">Zip Code</label>
+            <input [(ngModel)]="sale.address.zipcode" type="text" class="form-control" id="zipcode" name="zipcode">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="address">State</label>
+            <input [(ngModel)]="sale.address.state" type="text" class="form-control" id="state" name="state">
+        </div>
 
 
-<form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="title">Title</label>
-        <input [(ngModel)]="sale.title" type="text" class="form-control" id="title" name="title">
-    </div>
-    <div class="form-group">
-        <label for="address">Address</label>
-        <input [(ngModel)]="sale.address" type="text" class="form-control" id="address" name="address">
-    </div>
-    <!--<div class="checkbox">-->
-        <!--<label><input type="checkbox"> Remember me</label>-->
-    <!--</div>-->
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+        <!--<div class="checkbox">-->
+            <!--<label><input type="checkbox"> Remember me</label>-->
+        <!--</div>-->
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+</div>

@@ -8,12 +8,13 @@ import {Http, Headers} from "@angular/http";
 import {AuthHttp} from 'angular2-jwt';
 
 import 'rxjs/add/operator/toPromise';
+import {Address} from "cluster";
 
 @Injectable()
 export class SalesService{
 
     sales: Array<Sale>;
-    salesUrl : string = "http://localhost:3001/garage";
+    salesUrl : string = "http://localhost:3002/garage";
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http, private authHttp: AuthHttp){
@@ -55,6 +56,14 @@ export class SalesService{
             .post(this.salesUrl, JSON.stringify(sale), {headers: this.headers})
             .toPromise()
             .then(() => sale)
+            .catch(this.handleError);
+    }
+
+    getLatLng(address: any): Promise<any>{
+        return this.http
+            .get('http://maps.googleapis.com/maps/api/geocode/json?address=166+Monroe+street,+santa+clara,+CA&sensor=true')
+            .toPromise()
+            .then(result=>result.json())
             .catch(this.handleError);
     }
 

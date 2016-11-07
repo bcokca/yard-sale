@@ -6,4 +6,4 @@ exports.Garage = function (description, startDate,endDate, latitude, longitude, 
     this.latitude = latitude;
     this.longitude = longitude;
     this.address = address;
-}
+};

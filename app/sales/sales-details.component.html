@@ -1,3 +1,9 @@
+<sebm-google-map [latitude]="latLng.lat" [longitude]="latLng.lng" *ngIf="latLng">
+    <sebm-google-map-marker [latitude]="latLng.lat" [longitude]="latLng.lng"></sebm-google-map-marker>
+</sebm-google-map>
+
+
+
 <div *ngIf="sale">
     <h1>YardSale/{{sale.title}}</h1>
     Id: {{sale._id}}

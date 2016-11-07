@@ -7,7 +7,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 
 import {SalesService} from './sales.service';
 
-import {Sale} from "./sale.model";
+import {Sale, SaleAddress} from "./sale.model";
 import {Location} from "@angular/common";
 
 @Component({
@@ -47,7 +47,7 @@ export class YardSaleSaveComponent implements OnInit{
 
 
     initializeSale(){
-        this.sale = new Sale('1', '', '');
+        this.sale = new Sale('1', '', new SaleAddress());
     }
 
 }
